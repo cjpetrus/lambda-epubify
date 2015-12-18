@@ -1,0 +1,14 @@
+{
+  "output": {
+    "key": "epubify-test.epub",
+    "bucket": "beanco"
+  },
+  "title": "Epubify Lambda Test",
+  "urls": [
+    "https://thoughts.siliconguild.com/what-makes-malcolm-gladwell-fascinating-59c4ab43ca6e",
+    "http://arstechnica.com/tech-policy/2015/10/if-larry-lessig-is-elected-president-and-campaign-reforms-pass-he-wont-resign/",
+    "http://www.theatlantic.com/politics/archive/2015/10/referendum-presidency-larry-lessig/411013/",
+    "http://money.cnn.com/2015/10/18/technology/amazon-lawsuit-fake-reviews/index.html",
+    "http://www.nytimes.com/2015/10/18/nyregion/dying-alone-in-new-york-city.html?hp&action=click&pgtype=Homepage&module=photo-spot-region&region=top-news&WT.nav=top-news"
+  ]
+}
