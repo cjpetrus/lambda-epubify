@@ -14,7 +14,7 @@ To run this project on Lambda, you'll need to build it first on Amazon Linux. *I
 4. Install lxml's dependencies by running the `bootstrap.sh` script.
 5. Run the `build.sh` script to build a ZIP file.
 
-The ZIP file created on step 4 is ready to be uploaded to AWS Lambda and invoked.
+The ZIP file created on step 4 is ready to be uploaded to AWS Lambda and invoked. The handler filename is `handler`, the handler func is called `handler`.
 
 # Usage
 
