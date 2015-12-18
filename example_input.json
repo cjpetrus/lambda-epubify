@@ -1,7 +1,7 @@
 {
   "output": {
     "key": "epubify-test.epub",
-    "bucket": "beanco"
+    "bucket": "<your-bucket>"
   },
   "title": "Epubify Lambda Test",
   "urls": [

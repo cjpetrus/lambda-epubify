@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 
 import os
 import argparse
 import tempfile
-import subprocess
 import concurrent.futures
 from urlparse import urlparse
 
@@ -14,15 +14,11 @@ from slugify import slugify
 from unidecode import unidecode
 from readability.readability import Document
 
-import logger
-
-
-logger = logger.worker_logger
-
 
 class Article:
 
     def __init__(self, url):
+        print('Saving page: {}'.format(url))
         res = requests.get(url)
         self.url = url
         self.article = Document(res.content)
@@ -60,11 +56,11 @@ class Article:
             try:
                 res = requests.get(imgsrc)
             except Exception as e:
-                logger.error('Could not fetch image ({}) from "{}"'.format(str(e), imgsrc))
+                print('Could not fetch image ({}) from "{}"'.format(str(e), imgsrc))
                 return
 
             if res.status_code == 404:
-                logger.info('Could not fetch image (HTTP 404), attempted fetch: "{}", source URL: {}'.format(imgsrc, img.get('src')))
+                print('Could not fetch image (HTTP 404), attempted fetch: "{}", source URL: {}'.format(imgsrc, img.get('src')))
                 continue
 
             with open(dest, 'wb') as f:
@@ -133,7 +129,7 @@ def create_book(urls, title='Epubify Test Book', filename=None):
                 articles.append(article)
 
     book = Book(articles, title)
-    print 'Writing book to {}'.format(filename)
+    print('Writing book to {}'.format(filename))
     book.write_epub(filename)
     return filename
 
